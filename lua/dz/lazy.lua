@@ -14,9 +14,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.cmd('colorscheme base16-one-light')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
-vim.cmd('colorscheme base16-one-light')
 vim.o.background = 'light'
 vim.o.cursorcolumn = true
 vim.o.cursorline = true
@@ -27,6 +27,7 @@ vim.o.relativenumber = true
 vim.o.shiftwidth = 2
 vim.o.signcolumn = 'yes'
 vim.o.softtabstop = 2
+vim.o.swapfile = false
 vim.o.tabstop = 2
 vim.o.termguicolors = true
 vim.o.winbar = '%f %m'
@@ -34,5 +35,4 @@ vim.o.wrap = false
 
 require('lazy').setup({
   spec = { { import = 'dz.plugins' } },
-  checker = { enabled = true },
 })
